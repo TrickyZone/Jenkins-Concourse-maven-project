@@ -30,9 +30,7 @@ pipeline{
               }
               steps{
                 sh 'mvn package'
-                sh '''
-                scp target/*.jar ubuntu@3.136.233.251:/home/ubuntu
-                '''
+                
               }
             }
             
@@ -42,7 +40,7 @@ pipeline{
       
     }
     post{
-      success{
+      always{
         
         sh 'ls'
 
