@@ -34,16 +34,7 @@ pipeline{
         }
         
       }
-      stage("Package"){
-              
-                agent{
-                  label 'Slave1'
-                }
-                steps{
-                sh 'mvn package'
-              }
-            
-            }
+      
     }
     post{
       success{
