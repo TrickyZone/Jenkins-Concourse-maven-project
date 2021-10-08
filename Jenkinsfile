@@ -30,6 +30,7 @@ pipeline{
               }
               steps{
                 sh 'mvn package'
+                sh 'pwd'
                 
               }
             }
