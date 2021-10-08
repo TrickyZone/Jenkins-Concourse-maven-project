@@ -40,10 +40,7 @@ pipeline{
       success{
         archiveArtifacts artifacts: 'target/*.jar', fingerprint: true 
        
-        //cleanWs()
-      }
-      failure{
-        cleanWs()
+
       }
     }
 }
