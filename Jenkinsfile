@@ -40,6 +40,9 @@ pipeline{
     }
     post{
       success{
+        agent{
+                label 'Slave2'
+              }
         
         sh 'ls'
 
