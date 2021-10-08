@@ -38,7 +38,8 @@ pipeline{
     post{
       always{
         sh 'cd /home/ubuntu/Slave2/workspace/parallel-build@2/target/'
-        archiveArtifacts artifacts: '*.jar'
+        sh 'pwd'
+        archiveArtifacts artifacts: 'sample-application-for-jenkins-1.0-SNAPSHOT.jar'
         sh '''
         ls "$WORKSPACE"
         '''
