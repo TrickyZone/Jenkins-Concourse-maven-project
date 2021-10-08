@@ -7,12 +7,7 @@ pipeline{
   maven 'mvn'
   }
     stages{
-      stage("Cleanup"){
-        steps{
-          echo "Build"
-           sh 'mvn clean '
-        }
-      }
+      
       stage("Parallel Build"){
         parallel{
             stage("Compile")
@@ -21,7 +16,7 @@ pipeline{
                 label 'Slave1'
               }
               steps{
-                sh 'mvn compile'
+                sh 'mvn clean compile'
               }
             }
             stage("Install"){
