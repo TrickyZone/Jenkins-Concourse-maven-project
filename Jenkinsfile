@@ -22,12 +22,12 @@ pipeline{
                 sh 'mvn compile'
               }
             }
-            stage("Test"){
+            stage("Install"){
               agent{
                 label 'Slave2'
               }
               steps{
-                sh 'mvn test'
+                sh 'mvn install'
               }
             }
             
