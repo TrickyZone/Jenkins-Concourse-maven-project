@@ -41,7 +41,7 @@ pipeline{
     post{
       success{
         
-        archiveArtifacts artifacts: '$WORKSPACE/target/*.jar', fingerprint: true 
+        archiveArtifacts artifacts: 'target/*.jar', fingerprint: true 
        
 
       }
