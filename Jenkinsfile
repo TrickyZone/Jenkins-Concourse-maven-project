@@ -42,8 +42,9 @@ pipeline{
     post{
       always{
         
-        sh 'ls'
-
+        sh '''
+        ls "$WORKSPACE"
+        '''
       }
     }
 }
