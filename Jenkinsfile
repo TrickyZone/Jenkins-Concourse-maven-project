@@ -27,7 +27,7 @@ pipeline{
                 label 'Slave2'
               }
               steps{
-                sh 'mvn install'
+                sh 'mvn package'
               }
             }
             
