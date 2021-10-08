@@ -37,8 +37,8 @@ pipeline{
     }
     post{
       always{
-        
-        archiveArtifacts artifacts: '/home/ubuntu/Slave2/workspace/parallel-build@2/target/*.jar'
+        sh 'cd /home/ubuntu/Slave2/workspace/parallel-build@2/target/'
+        archiveArtifacts artifacts: '*.jar'
         sh '''
         ls "$WORKSPACE"
         '''
