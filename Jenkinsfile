@@ -38,7 +38,7 @@ pipeline{
     }
     post{
       success{
-        archiveArtifacts 'target/sample-application-for-jenkins-1.0-SNAPSHOT.jar' 
+        archiveArtifacts artifacts: 'target/*.jar', fingerprint: true 
        
         cleanWs()
       }
