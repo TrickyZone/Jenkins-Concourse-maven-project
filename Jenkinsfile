@@ -30,7 +30,11 @@ pipeline{
                 sh 'mvn test'
               }
             }
-            stage("Package"){
+            
+        }
+        
+      }
+      stage("Package"){
               
                 agent{
                   label 'Slave1'
@@ -40,8 +44,13 @@ pipeline{
               }
             
             }
-        }
-        
+    }
+    post{
+      success{
+        archiveArtifacts ''
+      }
+      failure{
+        cleanWs()
       }
     }
 }
