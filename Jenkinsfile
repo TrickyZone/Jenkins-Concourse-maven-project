@@ -38,7 +38,7 @@ pipeline{
     }
     post{
       success{
-        archiveArtifacts '*.jar'
+        echo "Success"
         cleanWs()
       }
       failure{
