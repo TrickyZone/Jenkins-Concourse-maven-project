@@ -30,15 +30,16 @@ pipeline{
                 sh 'mvn test'
               }
             }
-            stage("Package"){
+            
+            }
+        }
+        stage("Package"){
               steps{
                 agent{
                   label 'Slave1'
                 }
                 sh 'mvn package'
               }
-            }
-        }
       }
     }
 }
