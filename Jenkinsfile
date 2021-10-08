@@ -38,6 +38,7 @@ pipeline{
     }
     post{
       success{
+        echo "$WORKSPACE"
         archiveArtifacts artifacts: 'target/*.jar', fingerprint: true 
        
 
