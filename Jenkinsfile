@@ -1,7 +1,7 @@
 pipeline{
 
   agent {
-    label 'Slave1'
+    label 'Slave2'
   }
   tools{
   maven 'mvn'
@@ -40,9 +40,6 @@ pipeline{
     }
     post{
       success{
-        agent{
-                label 'Slave2'
-              }
         
         sh 'ls'
 
