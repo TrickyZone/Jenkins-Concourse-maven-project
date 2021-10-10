@@ -14,14 +14,14 @@ public class AppTest
      * Rigorous Test :-)
      */
     @Test
-    public void returnValueTest()
+    public void returnValueFalse()
     {
         App app = new App();
-        assertTrue( "Returned true", app.returnvalue() );
+        assertFalse( "Returned False", !app.returnvalue() );
     }
     @Test
-    public void returnValueFalse(){
+    public void returnValueTrue(){
         App app = new App();
-        assertFalse("Returned False", !app.returnvalue());
+        assertTrue("Returned True", app.returnvalue());
     }
 }
