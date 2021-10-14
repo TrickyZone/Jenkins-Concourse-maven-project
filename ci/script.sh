@@ -1,3 +1,3 @@
 #!/bin/bash
 
-mvn clean compile
+mvn clean compile -f source-code/pom.xml
