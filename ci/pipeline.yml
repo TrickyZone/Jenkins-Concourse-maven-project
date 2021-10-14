@@ -1,0 +1,24 @@
+resources:
+   - name: source-code
+     type: git
+     icon: github
+     source:
+        uri: https://github.com/DipayanP007/practice-private-repository-jenkins.git
+        branch: master
+
+jobs:
+   - name: maven-goal
+     plan:
+        - get: source-code
+        - task: maven-exec
+          config:
+             platform: linux
+             image_resources:
+                 type: image-registry
+                 source:
+                    repository: maven
+             
+             inputs:
+                - name: source-code
+             run:
+                path: source-code/scripts.sh
