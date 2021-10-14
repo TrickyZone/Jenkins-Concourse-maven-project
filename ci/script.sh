@@ -1,3 +1,3 @@
 #!/bin/bash
 
-find .
+mvn clean compile
