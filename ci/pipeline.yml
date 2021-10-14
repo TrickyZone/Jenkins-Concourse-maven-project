@@ -3,7 +3,7 @@ resources:
      type: git
      icon: github
      source:
-        uri: https://github.com/DipayanP007/practice-private-repository-jenkins.git
+        uri: https://github.com/DipayanP007/Jenkins-Concourse-maven-project.git
         branch: master
 
 jobs:
@@ -14,11 +14,12 @@ jobs:
           config:
              platform: linux
              image_resources:
-                 type: image-registry
+                 type: docker-image
                  source:
-                    repository: maven
+                    repository: ubuntu
              
              inputs:
                 - name: source-code
              run:
-                path: source-code/scripts.sh
+                path: find
+                args: [.]
