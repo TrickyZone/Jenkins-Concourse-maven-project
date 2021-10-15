@@ -13,7 +13,7 @@ jobs:
    - name: clean-test
      plan:
         - get: source-code
-        
+          trigger: true
         - task: maven-exec
           config:
              platform: linux
