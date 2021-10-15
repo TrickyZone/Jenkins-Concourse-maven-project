@@ -2,5 +2,5 @@
 
 mvn package -f source-code/pom.xml
 
-ls
-find .
+cd target
+java -jar *.jar

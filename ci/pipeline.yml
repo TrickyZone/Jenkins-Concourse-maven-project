@@ -31,7 +31,7 @@ jobs:
      plan:
           - get: source-code
             trigger: true
-            passed: [clean-test]
+            
           - task: package
             file: source-code/ci/task-package.yml
           - task: find-all
