@@ -1,3 +1,4 @@
+---
 resources:
    - name: source-code
      type: git
@@ -5,11 +6,15 @@ resources:
      source:
         uri: https://github.com/DipayanP007/Jenkins-Concourse-maven-project.git
         branch: master
+        username: DipayanP007
+        password: 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
 
 jobs:
-   - name: maven-goal
+   - name: clean-test
      plan:
         - get: source-code
+        - set_pipeline: source-code
+          file: source-code/ci/pipeline.yml
         - task: maven-exec
           config:
              platform: linux
@@ -22,3 +27,11 @@ jobs:
                 - name: source-code
              run:
                 path: source-code/ci/script.sh
+
+   - name: package-artifact
+     plan:
+          - get: source-code
+            trigger: true
+            passed: [clean-test]
+          - task: package
+            file: source-code/task-package.yml
