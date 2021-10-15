@@ -34,3 +34,16 @@ jobs:
             passed: [clean-test]
           - task: package
             file: source-code/ci/task-package.yml
+          - task: find-all
+            config:
+               platform: linux
+               image_resource:
+                  type: docker-image
+                  source: {repository: ubuntu}
+               
+               inputs:
+                  - name: target
+               run:
+                  path: find
+                  args:
+                     - .
