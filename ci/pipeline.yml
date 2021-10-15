@@ -49,6 +49,4 @@ jobs:
                caches:
                   - path: /root/.m2/
                run:
-                  path: ls
-                  args:
-                    - -a
+                  path: source-code/ci/exec.sh

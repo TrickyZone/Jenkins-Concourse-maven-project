@@ -1,2 +1,3 @@
 #!/bin/bash
-java -jar target/*.jar
+cd target
+java -jar *.jar
