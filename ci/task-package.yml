@@ -7,6 +7,9 @@ image_resource:
 inputs:
    - name: source-code
 
+outputs:
+  - name: output-folder
+    path: source-code/target
+
 run:
-   path: mvn
-   args: [-f, source-code/pom.xml, package]
+   path: source-code/ci/task-script.sh

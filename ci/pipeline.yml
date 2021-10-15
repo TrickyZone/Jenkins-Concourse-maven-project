@@ -13,8 +13,7 @@ jobs:
    - name: clean-test
      plan:
         - get: source-code
-        - set_pipeline: source-code
-          file: source-code/ci/pipeline.yml
+        
         - task: maven-exec
           config:
              platform: linux
@@ -34,4 +33,4 @@ jobs:
             trigger: true
             passed: [clean-test]
           - task: package
-            file: source-code/task-package.yml
+            file: source-code/ci/task-package.yml
