@@ -8,6 +8,7 @@ resources:
         branch: master
         username: DipayanP007
         password: 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
+   
 
 jobs:
    - name: clean-test
@@ -28,13 +29,17 @@ jobs:
                 path: source-code/ci/script.sh
 
    - name: package-artifact
+     build_log_retention:
+        days: 2
+        builds: 5
+        minimum_succeeded_builds: 2
      plan:
           - get: source-code
+            passed: [clean-test]
             trigger: true
-            
           - task: package
             file: source-code/ci/task-package.yml
-
+            
 
           - task: find-all
             config:
@@ -49,4 +54,7 @@ jobs:
                caches:
                   - path: /root/.m2/
                run:
-                  path: source-code/ci/exec.sh
+                  path: java
+                  args:
+                    - -jar 
+                    - target/sample-application-for-jenkins-1.0-SNAPSHOT.jar
