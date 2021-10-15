@@ -47,7 +47,7 @@ jobs:
                   - name: target
 
                caches:
-                  - path: /root/.m2
+                  - path: /root/.m2/
                run:
                   path: ls
                   args:
