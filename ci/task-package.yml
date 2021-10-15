@@ -6,6 +6,8 @@ image_resource:
 
 inputs:
    - name: source-code
+caches:
+ - path: /root/.m2
 
 outputs:
   - name: target

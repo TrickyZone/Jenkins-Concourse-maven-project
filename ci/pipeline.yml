@@ -34,6 +34,8 @@ jobs:
             
           - task: package
             file: source-code/ci/task-package.yml
+
+
           - task: find-all
             config:
                platform: linux
@@ -43,5 +45,10 @@ jobs:
                
                inputs:
                   - name: target
+
+               caches:
+                  - path: /root/.m2
                run:
-                  path: source-code/ci/exec.sh
+                  path: ls
+                  args:
+                    - -a
