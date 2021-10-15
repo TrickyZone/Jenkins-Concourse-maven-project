@@ -9,7 +9,7 @@ inputs:
 
 outputs:
   - name: output-folder
-    path: source-code/target
+    
 
 run:
    path: source-code/ci/task-script.sh
